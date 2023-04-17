@@ -5,14 +5,14 @@
       >Agende uma demonstração gratuita!</span
     >
   </div>
-  <div class="form-wrapper">
-    <div class="modulos-list">
-      <app-modulo-item
-        [modulo]="modulo"
-        *ngFor="let modulo of modulos"
-      ></app-modulo-item>
+  <form [formGroup]="form" (ngSubmit)="onSubmit()" class="form">
+    <!-- Lado Esq. -->
+    <div class="form__left">
+      <!-- Modulos -->
+      <app-modulos [control]="this.form.controls.modulos"></app-modulos>
     </div>
-    <form [formGroup]="form" (ngSubmit)="onSubmit()" class="form">
+    <!-- Lado Dir. -->
+    <div class="form__right">
       <!-- Nome -->
       <app-input-text
         label="Nome"
@@ -58,13 +58,13 @@
       ></app-input-hora>
       <!-- Enviar -->
       <button
+        mat-flat-button
         type="submit"
         color="primary"
-        mat-flat-button
         [disabled]="form.invalid"
       >
         Enviar
       </button>
-    </form>
-  </div>
+    </div>
+  </form>
 </div>

@@ -13,28 +13,22 @@
   }
 }
 
-.form-wrapper {
+.form{
+  margin-top: 2rem;
   display: grid;
   grid-template-columns: 1fr 1fr;
-  margin: 2rem auto;
 
-  .modulos-list {
-    gap: 2rem;
+  &__left {
     margin-right: 2rem;
-    display: flex;
-    flex-direction: column;
   }
+  &__right {
+    padding: 1rem;
+    background: white;
+    border-radius: .5rem;
 
-  .form{
     gap: .5rem;
     display: grid;
     grid-template-columns: 1fr 1fr;
-    background: var(--color-base);
-    border-radius: 0.5rem;
-    border: 1px solid rgba($color: black, $alpha: 0.1);
-    box-shadow: .1rem .1rem .25rem rgba($color: black, $alpha: 0.1);
-
-    padding: 1.5rem;
 
     * {
       grid-column: span 2;

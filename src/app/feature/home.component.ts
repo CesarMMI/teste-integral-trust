@@ -5,9 +5,9 @@ import { BeneficiosComponent } from '../ui/beneficios/beneficios.component';
 import { FuncionalidadesComponent } from '../ui/funcionalidades/funcionalidades.component';
 import { HeroComponent } from '../ui/hero/hero.component';
 import { ModulosComponent } from '../ui/modulos/modulos.component';
-import { TimeComponent } from '../ui/time/time.component';
 import { FaqComponent } from '../ui/faq/faq.component';
 import { DemoFormComponent } from '../ui/demo-form/demo-form.component';
+import { FooterComponent } from '../ui/footer/footer.component';
 
 @Component({
   selector: 'app-home',
@@ -20,9 +20,9 @@ import { DemoFormComponent } from '../ui/demo-form/demo-form.component';
     ModulosComponent,
     FuncionalidadesComponent,
     BeneficiosComponent,
-    TimeComponent,
     FaqComponent,
-    DemoFormComponent
+    DemoFormComponent,
+    FooterComponent
   ],
 })
 export class HomeComponent {}
