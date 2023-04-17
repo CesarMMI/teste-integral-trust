@@ -1,1 +1,135 @@
+// Custom Theming for Angular Material
+// For more information: https://material.angular.io/guide/theming
+@use "@angular/material" as mat;
+// Plus imports for other components in your app.
+
+// Include the common styles for Angular Material. We include this here so that you only
+// have to load a single css file for Angular Material in your app.
+// Be sure that you only ever include this mixin once!
+@include mat.core();
+
+// Define the palettes for your theme using the Material Design palettes available in palette.scss
+// (imported above). For each palette, you can optionally specify a default, lighter, and darker
+// hue. Available color palettes: https://material.io/design/color/
+$my-primary-palette: (
+  50: #e2e7ec,
+  100: #b8c3cf,
+  200: #889bb0,
+  300: #587390,
+  400: #355578,
+  500: #113760,
+  600: #0f3158,
+  700: #0c2a4e,
+  800: #0a2344,
+  900: #051633,
+  A100: #6c96ff,
+  A200: #3971ff,
+  A400: #064cff,
+  A700: #0042ec,
+  contrast: (
+    50: #000000,
+    100: #000000,
+    200: #000000,
+    300: #ffffff,
+    400: #ffffff,
+    500: #ffffff,
+    600: #ffffff,
+    700: #ffffff,
+    800: #ffffff,
+    900: #ffffff,
+    A100: #000000,
+    A200: #ffffff,
+    A400: #ffffff,
+    A700: #ffffff,
+  ),
+);
+$my-accent-palette: (
+  50: #f4ede0,
+  100: #e4d1b3,
+  200: #d3b380,
+  300: #c1944d,
+  400: #b37d26,
+  500: #a66600,
+  600: #9e5e00,
+  700: #955300,
+  800: #8b4900,
+  900: #7b3800,
+  A100: #ffc8a8,
+  A200: #ffa875,
+  A400: #ff8842,
+  A700: #ff7829,
+  contrast: (
+    50: #000000,
+    100: #000000,
+    200: #000000,
+    300: #000000,
+    400: #000000,
+    500: #ffffff,
+    600: #ffffff,
+    700: #ffffff,
+    800: #ffffff,
+    900: #ffffff,
+    A100: #000000,
+    A200: #000000,
+    A400: #000000,
+    A700: #000000,
+  ),
+);
+
+$integral-trust-primary: mat.define-palette(
+  $my-primary-palette,
+  A200,
+  A100,
+  A400
+);
+
+$integral-trust-accent: mat.define-palette(
+  $my-accent-palette,
+  A200,
+  A100,
+  A400
+);
+
+$integral-trust-warn: mat.define-palette(mat.$red-palette);
+
+// Create the theme object. A theme consists of configurations for individual
+// theming systems such as "color" or "typography".
+$integral-trust-theme: mat.define-light-theme(
+  (
+    color: (
+      primary: $integral-trust-primary,
+      accent: $integral-trust-accent,
+      warn: $integral-trust-warn,
+    ),
+  )
+);
+
+// Include theme styles for core and each component used in your app.
+// Alternatively, you can import and @include the theme mixins for each component
+// that you are using.
+@include mat.all-component-themes($integral-trust-theme);
+
 /* You can add global styles to this file, and also import other style files */
+* {
+  box-sizing: border-box;
+}
+html,
+body {
+  height: 100%;
+}
+body {
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+/* Variables */
+html {
+  --color-base: #fafafa;
+  --color-text: rgba(0, 0, 0, 0.87);
+  --color-accent: #123861;
+  --color-accent-light: #0080c6;
+
+  --text-sm: 1rem;
+  --text-md: 1.33rem;
+  --text-lg: 1.66em;
+  --text-xl: 2rem;
+}

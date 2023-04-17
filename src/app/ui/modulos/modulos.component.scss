@@ -1,0 +1,23 @@
+.title {
+  font-weight: 500;
+  font-size: var(--text-lg);
+}
+
+.cards-wrapper {
+  gap: 7rem;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: 1fr;
+  margin: 2rem 1rem 0 1rem;
+
+  .card {
+    &__title {
+      font-weight: 500;
+      font-size: var(--text-xl);
+    }
+    &__description {
+      opacity: 0.66;
+      font-size: var(--text-sm);
+    }
+  }
+}

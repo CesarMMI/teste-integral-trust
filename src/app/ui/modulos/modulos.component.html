@@ -1,0 +1,8 @@
+<span class="title">Nossos Produtos</span>
+<div class="cards-wrapper">
+  <div class="card" *ngFor="let card of cards">
+    <span class="card__title">{{ card.title }}</span>
+    <p class="card__description">{{ card.description }}</p>
+    <button color="primary" mat-button>Saiba Mais</button>
+  </div>
+</div>

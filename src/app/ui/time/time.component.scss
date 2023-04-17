@@ -1,0 +1,57 @@
+.background-wrapper{
+  background-color: white;
+  padding: 2rem 0;
+}
+
+.wrapper {
+  gap: 2rem;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  padding: 0 1rem;
+}
+
+.card {
+  padding: 1rem;
+  border-radius: 0.5rem;
+  border: 1px solid rgba($color: #000000, $alpha: 0.1);
+
+  &__link {
+    text-decoration: none;
+    color: var(--color-text);
+  }
+
+  &__header {
+    gap: 1rem;
+    display: flex;
+    align-items: center;
+    margin-bottom: 2rem;
+
+    &__text {
+      display: flex;
+      flex-direction: column;
+
+      &__nome {
+        font-weight: bold;
+        font-size: 1.2rem;
+      }
+      &__cargo{
+        opacity: .8;
+        font-size: .8rem;
+      }
+    }
+
+    &__avatar {
+      min-width: 3.5rem;
+      min-height: 3.5rem;
+      border-radius: 100%;
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+    }
+  }
+  &__content {
+    p:last-child{
+      margin-bottom: 0;
+    }
+  }
+}

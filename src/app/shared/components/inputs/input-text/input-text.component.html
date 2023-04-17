@@ -1,0 +1,5 @@
+<mat-form-field class="form-field" appearance="outline">
+  <mat-label>{{ label }}</mat-label>
+  <input matInput [formControl]="_control" [id]="inputId"/>
+  <mat-error *ngIf="_control.invalid">{{ getErrorMessage() }}</mat-error>
+</mat-form-field>

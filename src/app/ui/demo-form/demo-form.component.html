@@ -1,0 +1,75 @@
+<div class="wrapper">
+  <div class="call-to-action">
+    <span class="call-to-action__title">Inove sua gestão financeira</span>
+    <span class="call-to-action__subtitle"
+      >Agende uma demonstração gratuita!</span
+    >
+  </div>
+  <div class="form-wrapper">
+    <div class="modulos-list">
+      <div class="modulos-list__item">
+        <div class="modulos-list__item__checkbox"></div>
+        <span class="modulos-list__item__title">RO integral</span>
+      </div>
+      <div class="modulos-list__item">
+        <div class="modulos-list__item__checkbox"></div>
+        <span class="modulos-list__item__title">RL integral</span>
+      </div>
+      <div class="modulos-list__item">
+        <div class="modulos-list__item__checkbox"></div>
+        <span class="modulos-list__item__title">RM integral</span>
+      </div>
+    </div>
+    <form [formGroup]="form" (ngSubmit)="onSubmit()" class="form">
+      <!-- Nome -->
+      <app-input-text
+        label="Nome"
+        [control]="this.form.controls.nome"
+        [validations]="[
+          {
+            validationType: 'required',
+            message: 'Qual é o seu nome? Não seja tímido!'
+          }
+        ]"
+        ></app-input-text>
+        <!-- Email -->
+        <app-input-text
+        label="Email"
+        icon="mail"
+        [control]="this.form.controls.email"
+        [validations]="[
+          {
+            validationType: 'required',
+            message: 'O email está vazio! Insira seu endereço para entrarmos em contato.'
+          },
+          {
+            validationType: 'email',
+            message: 'O email parece inválido! Verifique ele, por favor.'
+          }
+        ]"
+      ></app-input-text>
+      <!-- Telefone -->
+      <app-input-telefone
+        label="Telefone"
+        [control]="this.form.controls.telefone"
+      ></app-input-telefone>
+      <!-- Data -->
+      <app-input-data
+        label="Data"
+        [control]="this.form.controls.data"
+      ></app-input-data>
+      <!-- Hora -->
+      <app-input-hora
+        label="Horário"
+        [control]="this.form.controls.hora"
+      ></app-input-hora>
+      <!-- Enviar -->
+      <button
+        type="submit"
+        color="primary"
+        mat-flat-button
+        [disabled]="form.invalid"
+      >Enviar</button>
+    </form>
+  </div>
+</div>

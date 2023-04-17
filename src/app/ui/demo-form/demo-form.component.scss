@@ -1,0 +1,73 @@
+.call-to-action {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  color: white;
+
+  &__title {
+    font-size: 4rem;
+    font-weight: bolder;
+  }
+  &__subtitle {
+    font-size: 2.66rem;
+  }
+}
+
+.form-wrapper {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  margin: 2rem auto;
+
+  .modulos-list {
+    gap: 2rem;
+    margin-right: 2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    &__item {
+      flex: 1 1 auto;
+      gap: 1rem;
+      display: flex;
+      align-items: center;
+      cursor: pointer;
+
+      background: var(--color-base);
+      padding: 1rem;
+      border-radius: 0.5rem;
+      border: 1px solid rgba($color: black, $alpha: 0.1);
+      box-shadow: .1rem .1rem .25rem rgba($color: black, $alpha: 0.1);
+
+      &__title {
+        font-size: 2rem;
+      }
+      &__checkbox {
+        width: 1.5rem;
+        height: 1.5rem;
+        border-radius: 100%;
+        border: 1px solid rgba($color: black, $alpha: 0.2);
+
+      }
+    }
+  }
+
+  .form{
+    gap: .5rem;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    background: var(--color-base);
+    border-radius: 0.5rem;
+    border: 1px solid rgba($color: black, $alpha: 0.1);
+    box-shadow: .1rem .1rem .25rem rgba($color: black, $alpha: 0.1);
+
+    padding: 1.5rem;
+
+    * {
+      grid-column: span 2;
+    }
+
+    app-input-data, app-input-hora {
+      grid-column: span 1;
+    }
+  }
+}
