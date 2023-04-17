@@ -23,32 +23,6 @@
     margin-right: 2rem;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
-
-    &__item {
-      flex: 1 1 auto;
-      gap: 1rem;
-      display: flex;
-      align-items: center;
-      cursor: pointer;
-
-      background: var(--color-base);
-      padding: 1rem;
-      border-radius: 0.5rem;
-      border: 1px solid rgba($color: black, $alpha: 0.1);
-      box-shadow: .1rem .1rem .25rem rgba($color: black, $alpha: 0.1);
-
-      &__title {
-        font-size: 2rem;
-      }
-      &__checkbox {
-        width: 1.5rem;
-        height: 1.5rem;
-        border-radius: 100%;
-        border: 1px solid rgba($color: black, $alpha: 0.2);
-
-      }
-    }
   }
 
   .form{

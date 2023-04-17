@@ -12,6 +12,7 @@ import { InputDataComponent } from 'src/app/shared/components/inputs/input-data/
 import { InputHoraComponent } from 'src/app/shared/components/inputs/input-hora/input-hora.component';
 import { InputTelefoneComponent } from 'src/app/shared/components/inputs/input-telefone/input-telefone.component';
 import { InputTextComponent } from 'src/app/shared/components/inputs/input-text/input-text.component';
+import { ModuloItemComponent } from './modulo-item/modulo-item.component';
 
 @Component({
   selector: 'app-demo-form',
@@ -29,9 +30,16 @@ import { InputTextComponent } from 'src/app/shared/components/inputs/input-text/
     InputTelefoneComponent,
     InputDataComponent,
     InputHoraComponent,
+    ModuloItemComponent,
   ],
 })
 export class DemoFormComponent {
+  modulos = [
+    { id: 1, name: 'RO integral' },
+    { id: 2, name: 'RL integral' },
+    { id: 3, name: 'RM integral' },
+  ];
+
   form = this.formBuilder.group({
     nome: ['', Validators.required],
     email: ['', [Validators.required, Validators.email]],

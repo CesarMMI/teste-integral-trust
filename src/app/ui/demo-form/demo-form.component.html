@@ -7,18 +7,10 @@
   </div>
   <div class="form-wrapper">
     <div class="modulos-list">
-      <div class="modulos-list__item">
-        <div class="modulos-list__item__checkbox"></div>
-        <span class="modulos-list__item__title">RO integral</span>
-      </div>
-      <div class="modulos-list__item">
-        <div class="modulos-list__item__checkbox"></div>
-        <span class="modulos-list__item__title">RL integral</span>
-      </div>
-      <div class="modulos-list__item">
-        <div class="modulos-list__item__checkbox"></div>
-        <span class="modulos-list__item__title">RM integral</span>
-      </div>
+      <app-modulo-item
+        [modulo]="modulo"
+        *ngFor="let modulo of modulos"
+      ></app-modulo-item>
     </div>
     <form [formGroup]="form" (ngSubmit)="onSubmit()" class="form">
       <!-- Nome -->
@@ -31,16 +23,17 @@
             message: 'Qual é o seu nome? Não seja tímido!'
           }
         ]"
-        ></app-input-text>
-        <!-- Email -->
-        <app-input-text
+      ></app-input-text>
+      <!-- Email -->
+      <app-input-text
         label="Email"
         icon="mail"
         [control]="this.form.controls.email"
         [validations]="[
           {
             validationType: 'required',
-            message: 'O email está vazio! Insira seu endereço para entrarmos em contato.'
+            message:
+              'O email está vazio! Insira seu endereço para entrarmos em contato.'
           },
           {
             validationType: 'email',
@@ -69,7 +62,9 @@
         color="primary"
         mat-flat-button
         [disabled]="form.invalid"
-      >Enviar</button>
+      >
+        Enviar
+      </button>
     </form>
   </div>
 </div>
