@@ -14,6 +14,10 @@ import {
 
 import { IFormData } from '../models/form-data';
 
+// O PDF de instruções, no 4º item, solicitava-se para realizar uma requisição GET no formulário,
+// porém para enviar dados usa-se o POST. Na dúvida, eu fiz as duas requisições, uma com o verbo GET
+// para recuperar dados e preenchê-los no formulário, e outra com o verbo POST, simulando o envio de
+// dados para uma API.
 @Injectable({
   providedIn: 'root',
 })
