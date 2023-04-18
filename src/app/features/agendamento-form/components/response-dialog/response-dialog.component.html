@@ -10,7 +10,7 @@
     <span class="text__subtitle">{{ data.message }}</span>
   </div>
   <button
-    [color]="data.error ? 'warn' : 'primary'"
+    [class]="data.error ? 'warn' : 'primary'"
     mat-flat-button
     (click)="dialogRef.close()"
   >

@@ -34,14 +34,14 @@ export class AgendamentoService {
 
   // Para simular um erro do servidor, 10% das requisições criam um erro artificial
   private randomError() {
-    if (Math.random() < 0.1) throw new Error('Erro artificial');
+    if (Math.random() < 0.9) throw new Error('Erro artificial');
   }
 
   get(): Observable<IFormData> {
     return of({
       nome: 'Cesar',
       email: 'cesar@teste.com',
-      telefone: '(11) 980002817',
+      telefone: '11 91234-1234',
       datahora: new Date(),
       modulos: [1, 3],
     }).pipe(

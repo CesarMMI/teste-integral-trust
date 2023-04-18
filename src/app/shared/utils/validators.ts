@@ -10,6 +10,16 @@ export function modulosLengthValidator(length: number): ValidatorFn {
   };
 }
 
+export function telefoneValidator(): ValidatorFn {
+  return (control: AbstractControl): { [key: string]: any } | null => {
+    const telefonePattern = /^\d{2}\s\d{4,5}-\d{4}$/;
+    if (control.value && !telefonePattern.test(control.value)) {
+      return { telefone: true };
+    }
+    return null;
+  };
+}
+
 export function horaValidator(): ValidatorFn {
   return (control: AbstractControl): { [key: string]: any } | null => {
     const hora = control.value;
@@ -29,7 +39,8 @@ export function horaValidator(): ValidatorFn {
       horas > 23 ||
       minutos < 0 ||
       minutos > 59
-    ) return { hora: true };
+    )
+      return { hora: true };
 
     return null;
   };

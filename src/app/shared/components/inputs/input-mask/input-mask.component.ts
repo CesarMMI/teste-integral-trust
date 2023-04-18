@@ -30,13 +30,6 @@ export class InputMaskComponent extends InputDirective {
     this._control.setValue(this.aplicarMascara(valor));
   }
 
-  @HostListener('focusout', ['$event'])
-  onBlur(event: any) {
-    if (this.rawValue.length === this.maskLength) return;
-
-    this.control.setErrors({ ...this.control.errors, incorrect: true });
-  }
-
   aplicarMascara(valor: string): string {
     valor = valor.replace(/\D/g, '');
     let pad = this.mask.replace(/\D/g, '').replace(/9/g, '_');

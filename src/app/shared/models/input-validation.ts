@@ -1,4 +1,4 @@
 export interface IInputValidation {
-  validationType: 'required' | 'email' | 'data' | 'hora';
+  validationType: 'required' | 'email' | 'telefone' | 'data' | 'hora';
   message: string;
 }

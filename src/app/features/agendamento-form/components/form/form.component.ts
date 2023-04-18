@@ -21,6 +21,7 @@ import { IFormData } from 'src/app/shared/models/form-data';
 import {
   horaValidator,
   modulosLengthValidator,
+  telefoneValidator,
 } from 'src/app/shared/utils/validators';
 
 @Component({
@@ -58,7 +59,7 @@ export class FormComponent implements OnInit {
     this.form = this.formBuilder.group({
       nome: [null, Validators.required],
       email: [null, [Validators.required, Validators.email]],
-      telefone: [null, Validators.required],
+      telefone: [null, [Validators.required, telefoneValidator()]],
       data: [null, Validators.required],
       hora: [null, [Validators.required, horaValidator()]],
       modulos: this.formBuilder.array(

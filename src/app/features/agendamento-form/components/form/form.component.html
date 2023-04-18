@@ -42,12 +42,16 @@
     <!-- Telefone -->
     <app-input-mask
       label="Telefone"
-      mask="(99) 99999-9999"
+      mask="99 99999-9999"
       [control]="form.controls['telefone']"
       [validations]="[
         {
           validationType: 'required',
           message: 'O telefone está vazio!'
+        },
+        {
+          validationType: 'telefone',
+          message: 'O telefone parece inválido'
         }
       ]"
     ></app-input-mask>

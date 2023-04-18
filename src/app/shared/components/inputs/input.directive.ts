@@ -25,6 +25,7 @@ export class InputDirective implements OnInit {
 
   getErrorMessage() {
     for (const validation of this.validations) {
+      console.log(this.control.errors)
       if (this.control.hasError(validation.validationType))
         return validation.message;
     }

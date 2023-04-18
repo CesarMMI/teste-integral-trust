@@ -27,4 +27,14 @@
       font-size: var(--text-xl);
     }
   }
+
+  button{
+    color: var(--color-base);
+    &.warn{
+      background-color: #B5003F !important;
+    }
+    &.primary{
+      background-color: var(--color-accent-light) !important;
+    }
+  }
 }
