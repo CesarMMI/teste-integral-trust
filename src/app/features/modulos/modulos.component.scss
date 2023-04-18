@@ -1,0 +1,45 @@
+.title {
+  font-weight: 500;
+  font-size: var(--text-lg);
+}
+
+.cards-wrapper {
+  gap: 3rem;
+  display: grid;
+  grid-template-columns: 1fr;
+  margin: 1rem 0.5rem 0 0.5rem;
+
+  .card {
+    &__header {
+      gap: 0.5rem;
+      display: flex;
+      align-items: center;
+
+      &__icon {
+        opacity: 0.75;
+        color: var(--color-accent-light);
+      }
+      &__title {
+        font-weight: 600;
+        font-size: var(--text-xl);
+      }
+    }
+    &__description {
+      opacity: 0.66;
+      font-size: var(--text-sm);
+    }
+
+    button {
+      color: var(--color-accent-light);
+    }
+  }
+}
+
+@media (min-width: 960px) {
+  .cards-wrapper {
+    gap: 7rem;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    margin: 1rem 1rem 0 1rem;
+  }
+}

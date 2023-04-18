@@ -1,22 +1,19 @@
 import { Directive, Input, OnInit } from '@angular/core';
 import { AbstractControl, FormControl } from '@angular/forms';
+import { IInputValidation } from '../../models/input-validation';
 
-import { IInputValidation } from './input-validation';
-
-@Directive({ standalone: true })
-export abstract class InputDirective implements OnInit {
+@Directive({
+  selector: '[appInput]',
+})
+export class InputDirective implements OnInit {
   @Input() label: string = '';
-
-  @Input() validations: IInputValidation[] = [];
-
   @Input() control!: AbstractControl;
-  get _control() {
+  @Input() validations: IInputValidation[] = [];
+  protected get _control() {
     return this.control as FormControl;
   }
 
   protected inputId: string = '';
-
-  constructor() {}
 
   ngOnInit(): void {
     const randomHex = Math.floor(Math.random() * 0xffffffffffff)
@@ -28,7 +25,7 @@ export abstract class InputDirective implements OnInit {
 
   getErrorMessage() {
     for (const validation of this.validations) {
-      if (this._control.hasError(validation.validationType))
+      if (this.control.hasError(validation.validationType))
         return validation.message;
     }
     return;

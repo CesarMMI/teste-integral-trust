@@ -1,0 +1,75 @@
+form {
+  display: grid;
+  grid-template-columns: 1fr;
+
+  .container {
+    &__esq {
+      gap: 2rem;
+      display: flex;
+      flex-direction: column;
+      margin-bottom: 2rem;
+    }
+
+    &__dir {
+      gap: 1rem;
+      display: grid;
+      grid-template-columns: 1fr;
+
+      padding: 1rem;
+      border-radius: 0.5rem;
+      background-color: var(--color-base);
+
+      button {
+        color: var(--color-text) !important;
+        background-color: #fa9e00 !important;
+        font-weight: 700 !important;
+
+        span {
+        }
+        .spinner {
+          width: 1.5rem !important;
+          height: 1.5rem !important;
+          --mdc-circular-progress-active-indicator-color: #fff !important;
+        }
+
+        &.disabled {
+          opacity: 0.75;
+          cursor: default;
+          pointer-events: none;
+        }
+      }
+    }
+  }
+}
+
+@media (min-width: 600px) {
+  form {
+    .container {
+      &__dir {
+        grid-template-columns: 1fr 1fr;
+
+        * {
+          grid-column: span 2;
+        }
+
+        app-input-data,
+        app-input-mask[label="Hora"] {
+          grid-column: span 1;
+        }
+      }
+    }
+  }
+}
+
+@media (min-width: 960px) {
+  form {
+    grid-template-columns: 1fr 1fr;
+
+    .container {
+      &__esq {
+        margin-right: 1rem;
+        margin-bottom: 0;
+      }
+    }
+  }
+}

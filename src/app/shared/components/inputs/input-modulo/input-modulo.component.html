@@ -1,0 +1,9 @@
+<div
+  class="wrapper"
+  (click)="onClick()"
+  [class]="input.checked ? 'checked' : ''"
+>
+  <input [id]="inputId" #input [formControl]="_control" type="checkbox" />
+  <mat-icon>{{ input.checked ? "task_alt" : "radio_button_unchecked" }}</mat-icon>
+  <label>{{ label }}</label>
+</div>

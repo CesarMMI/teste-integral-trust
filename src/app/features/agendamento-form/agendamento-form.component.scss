@@ -1,0 +1,42 @@
+.call-to-action {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  color: white;
+  margin-bottom: 2rem;
+
+  &__title {
+    font-size: 4rem;
+    font-weight: bolder;
+  }
+  &__subtitle {
+    font-size: 2.66rem;
+  }
+}
+
+.form{
+  margin-top: 2rem;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+
+  &__left {
+    margin-right: 2rem;
+  }
+  &__right {
+    padding: 1rem;
+    background: white;
+    border-radius: .5rem;
+
+    gap: .5rem;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+
+    * {
+      grid-column: span 2;
+    }
+
+    app-input-data, app-input-hora {
+      grid-column: span 1;
+    }
+  }
+}

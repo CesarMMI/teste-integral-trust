@@ -1,12 +1,13 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { AppComponent } from './app.component';
 
 const routes: Routes = [
   {
     path: '',
-    loadComponent: () =>
-      import('./feature/home.component').then((m) => m.HomeComponent),
+    component: AppComponent,
   },
+  { path: '**', redirectTo: '' },
 ];
 
 @NgModule({

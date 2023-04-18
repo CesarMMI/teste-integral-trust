@@ -1,0 +1,19 @@
+<div class="wrapper" [class]="data.error ? 'erro' : 'success'">
+  <ng-container *ngIf="data.error; else success">
+    <img [src]="'assets/images/error.svg'" />
+  </ng-container>
+  <ng-template #success>
+    <img [src]="'assets/images/thank-you.svg'" />
+  </ng-template>
+  <div class="text">
+    <span class="text__title">{{ data.error ? "Erro" : "Sucesso" }}</span>
+    <span class="text__subtitle">{{ data.message }}</span>
+  </div>
+  <button
+    [color]="data.error ? 'warn' : 'primary'"
+    mat-flat-button
+    (click)="dialogRef.close()"
+  >
+    {{ data.error ? "Tentar novamente" : "Continuar" }}
+  </button>
+</div>

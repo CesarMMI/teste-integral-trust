@@ -1,0 +1,8 @@
+<div class="call-to-action">
+  <span class="call-to-action__title">Inove sua gestão financeira</span>
+  <span class="call-to-action__subtitle">Agende uma demonstração gratuita!</span>
+</div>
+<app-form
+  [value]="value$ | async"
+  (onSubmit)="onSubmit($event)"
+></app-form>

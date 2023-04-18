@@ -1,2 +1,16 @@
-<app-navigation></app-navigation>
-<router-outlet></router-outlet>
+<div class="responsive-container">
+  <app-header></app-header>
+  <app-hero-section (onClick)="modulos.scrollIntoView()"></app-hero-section>
+  <div #modulos class="background__branco align">
+    <app-modulos ></app-modulos>
+  </div>
+  <app-funcionalidades></app-funcionalidades>
+  <app-beneficios></app-beneficios>
+  <div class="background__branco align">
+    <app-perguntas></app-perguntas>
+  </div>
+  <div class="background__azul align">
+    <app-agendamento-form></app-agendamento-form>
+  </div>
+  <app-footer (onClick)="modulos.scrollIntoView()"></app-footer>
+</div>

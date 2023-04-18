@@ -1,0 +1,47 @@
+.responsive-container {
+  gap: 2rem;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+
+  padding: 0.5rem 0 1rem 0;
+
+  app-header,
+  app-footer {
+    width: min(90%, 1920px);
+  }
+
+  app-hero-section,
+  app-modulos,
+  app-funcionalidades,
+  app-beneficios {
+    width: min(85%, 1280px);
+  }
+
+  app-perguntas,
+  app-agendamento-form {
+    width: min(85%, 960px);
+  }
+}
+
+.background {
+  &__branco {
+    background-color: white;
+    * {
+      padding: 2rem 0;
+    }
+  }
+  &__azul {
+    background-color: var(--color-accent);
+    * {
+      padding: 2rem 0;
+    }
+  }
+}
+
+.align {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

@@ -1,12 +1,7 @@
-<mat-form-field class="form-field" appearance="outline">
+<mat-form-field appearance="outline">
   <mat-label>{{ label }}</mat-label>
-  <input
-    matInput
-    [id]="inputId"
-    [formControl]="_control"
-    [matDatepicker]="picker"
-  />
+  <input [id]="inputId" matInput [formControl]="_control" [matDatepicker]="picker" />
   <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
   <mat-datepicker #picker></mat-datepicker>
-  <mat-error *ngIf="_control.invalid">{{ getErrorMessage() }}</mat-error>
+  <mat-error *ngIf="_control.invalid">Data inválida!</mat-error>
 </mat-form-field>

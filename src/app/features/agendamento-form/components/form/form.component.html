@@ -1,0 +1,89 @@
+<form [formGroup]="form" (ngSubmit)="submit()">
+  <!-- Esquerda -->
+  <div class="container__esq">
+    <div
+      formArrayName="modulos"
+      *ngFor="let modulo of formModulos; let i = index"
+    >
+      <app-input-modulo
+        [label]="modulos[i]"
+        [control]="modulo"
+      ></app-input-modulo>
+    </div>
+  </div>
+  <!-- Direita -->
+  <div class="container__dir">
+    <!-- Nome -->
+    <app-input-text
+      label="Nome"
+      [control]="form.controls['nome']"
+      [validations]="[
+        {
+          validationType: 'required',
+          message: 'Qual é o seu nome? Não seja tímido!'
+        }
+      ]"
+    ></app-input-text>
+    <!-- Email -->
+    <app-input-text
+      label="Email"
+      [control]="form.controls['email']"
+      [validations]="[
+        {
+          validationType: 'required',
+          message: 'O email está vazio!'
+        },
+        {
+          validationType: 'email',
+          message: 'O email parece inválido!'
+        }
+      ]"
+    ></app-input-text>
+    <!-- Telefone -->
+    <app-input-mask
+      label="Telefone"
+      mask="(99) 99999-9999"
+      [control]="form.controls['telefone']"
+      [validations]="[
+        {
+          validationType: 'required',
+          message: 'O telefone está vazio!'
+        }
+      ]"
+    ></app-input-mask>
+    <!-- Data -->
+    <app-input-data
+      label="Data"
+      [control]="form.controls['data']"
+    ></app-input-data>
+    <!-- Hora -->
+    <app-input-mask
+      label="Hora"
+      mask="99:99"
+      [control]="form.controls['hora']"
+      [validations]="[
+        {
+          validationType: 'required',
+          message: 'O hora está vazio!'
+        },
+        {
+          validationType: 'hora',
+          message: 'O hora parece inválido!'
+        }
+      ]"
+    ></app-input-mask>
+    <!-- Submit -->
+    <button
+      type="submit"
+      color="primary"
+      [class]="form.invalid || value?.loading ? 'disabled' : ''"
+      mat-flat-button
+    >
+      <ng-container *ngIf="value?.loading; else buttonLabel">
+        <mat-progress-spinner class="spinner" color="" mode="indeterminate">
+        </mat-progress-spinner>
+      </ng-container>
+      <ng-template #buttonLabel>Enviar</ng-template>
+    </button>
+  </div>
+</form>

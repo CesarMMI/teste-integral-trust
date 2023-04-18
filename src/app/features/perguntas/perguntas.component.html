@@ -1,0 +1,20 @@
+<span class="title">Perguntas Frequentes</span>
+<p>
+  Duis est dui, elementum ac nisi sed, egestas efficitur neque. Nunc id
+  hendrerit arcu. Quisque sed sodales justo. Vestibulum posuere.
+</p>
+<div
+  *ngFor="let item of items"
+  class="list__item"
+  (click)="item.active = !item.active"
+  [ngClass]="item.active ? 'active' : ''"
+>
+  <div class="list__item__title">
+    <span class="list__item__title__question">{{ item.question }}</span>
+    <mat-icon class="list__item__title__icon">{{item.active ? "expand_less" : "expand_more"}}</mat-icon>
+  </div>
+  <div class="list__item__answer">
+    <p>{{ item.answer }}</p>
+  </div>
+</div>
+
